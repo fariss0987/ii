@@ -1,1 +1,94 @@
-# ii
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aliya Natasha Anniversary</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffd9e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    background-color: #fff0f5;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 3px solid #ff80b3;
+}
+
+h1 {
+    color: #ff4d94;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #ff80b3;
+    font-size: 1.2rem;
+}
+
+/* Hearts animation */
+.heart {
+    position: absolute;
+    color: #ff4d94;
+    font-size: 2rem;
+    animation: floatUp 4s linear infinite;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1;}
+    100% { transform: translateY(-600px) scale(1.5); opacity: 0;}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Aliya Natasha 💖</h1>
+    <img src="aliya.jpg" alt="Aliya Natasha">
+    <p>My beloved 🥰💑🌸</p>
+</div>
+
+<script>
+// Create random hearts
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+    heart.innerText = '❤️';
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}
+
+// Create hearts every 300ms
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
